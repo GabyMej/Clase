@@ -1,0 +1,24 @@
+#para instalar una libreria#
+instal.packages("BiocManager")
+ 
+#Para cargar la libreria#
+library("BiocManager")
+
+#Para instalar un libreria de BiocManager# 
+BiocManager::install("sangeranalyseR") 
+
+#para cargar la libreria#
+library(sangeranalyseR)
+
+#para seleccionar el WD# 
+setwd("C:/Users/Alumno1/Documents/Bioinformática avanzada/Secuencias ATPasa/Placa_TORATP")
+
+my_aligned_contigs <- SangerAlignment(ABIF_Directory      = "C:/Users/Alumno1/Documents/Bioinformática avanzada/Secuencias ATPasa/Placa_TORATP",
+                                      processMethod       = "REGEX",
+                                      REGEX_SuffixForward = "_*.ab1$",
+                                      REGEX_SuffixReverse = "_*.ab1$")
+
+my_aligned_contigs
+
+launchApp(my_aligned_contigs) 
+
